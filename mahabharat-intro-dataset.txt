@@ -1,0 +1,49 @@
+CREATE (Shantanu:Person {name:'Shantanu', gender:'m'}),
+(Satyavathi:Person {name:'Satyavathi', gender:'f'}),
+(Parashara:Person {name:'Parashara', gender:'m'}),
+(VyasaMuni:Person {name:'VyasaMuni', gender:'m'}),
+(Bheeshma:Person {name:'Bheeshma', gender:'m'}),
+(Ganga:Person {name:'Ganga', gender:'f'}),
+(VichitraVeerya:Person {name:'VichitraVeerya', gender:'m'}),
+(Ambika:Person {name:'Ambika', gender:'f'}),
+(Ambalika:Person {name:'Ambalika', gender:'f'}),
+(Drutharastra:Person {name:'Drutharastra', gender:'m'}),
+(Pandu:Person {name:'Pandu', gender:'m'}),
+(Ghandhari:Person {name:'Ghandhari', gender:'f'}),
+(Kunthi:Person {name:'Kunthi', gender:'f'}),
+(Madri:Person {name:'Madri', gender:'f'}),
+
+(Hasthinapura:Kingdom {name:'Hasthinapura'}),
+(Kashi:Kingdom {name:'Kashi'}),
+(Ghandara:Kingdom {name:'Ghandara'}),
+(Kuntibhoj:Kingdom {name:'Kuntibhoj'}),
+(Madra:Kingdom {name:'Madra'}),
+
+(Shantanu)-[:BELONGS_TO]->(Hasthinapura),
+(Ambika)-[:BELONGS_TO]->(Kashi),
+(Ambalika)-[:BELONGS_TO]->(Kashi),
+(Ghandhari)-[:BELONGS_TO]->(Ghandara),
+(Kunthi)-[:BELONGS_TO]->(Kuntibhoj),
+(Madra)-[:BELONGS_TO]->(Madri),
+
+(Bheeshma)-[:SON_OF]->(Shantanu),
+(Bheeshma)-[:SON_OF]->(Ganga),
+
+(Satyavathi)-[:WIFE_OF]->(Shantanu),
+
+(VichitraVeerya)-[:SON_OF]->(Satyavathi),
+(VichitraVeerya)-[:SON_OF]->(Shantanu),
+(Ambika)-[:WIFE_OF]->(VichitraVeerya),
+(Ambalika)-[:WIFE_OF]->(VichitraVeerya),
+
+(VyasaMuni)-[:SON_OF]->(Satyavathi),
+(VyasaMuni)-[:SON_OF]->(Parashara),
+
+(Pandu)-[:SON_OF]->(Ambalika),
+(Pandu)-[:SON_OF]->(VyasaMuni),
+(Kunthi)-[:WIFE_OF]->(Pandu),
+(Madri)-[:WIFE_OF]->(Pandu),
+
+(Drutharastra)-[:SON_OF]->(Ambika),
+(Drutharastra)-[:SON_OF]->(VyasaMuni),
+(Ghandhari)-[:WIFE_OF]->(Drutharastra)
